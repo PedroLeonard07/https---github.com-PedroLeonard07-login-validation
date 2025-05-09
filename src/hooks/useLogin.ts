@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface User {
     name: string;
@@ -17,6 +18,7 @@ export function useLogin() {
     })
     const verifEmail = users.find(u => u.email === email.trim())?.email || '';
     const verifPassword = users.find(u => u.password === password.trim())?.password || '';
+    const navigate = useNavigate();
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
@@ -37,7 +39,10 @@ export function useLogin() {
               email.trim() === verifEmail &&
               password.trim() === verifPassword
             ) {
-              alert("Usuário logado!");
+              localStorage.setItem('auth', 'true');
+              const userName = users.find(u => u.email === email.trim())?.name
+              localStorage.setItem('userLogged', JSON.stringify(userName));
+              navigate('/home');                
             } else {
               setEmailError("Email ou senha incorreto");
             }
