@@ -1,6 +1,6 @@
 interface FormLayoutProps {
     children: React.ReactNode
-    onSubmit: React.FormEventHandler
+    onSubmit?: React.FormEventHandler
 }
 
 export function FormLayout({children, onSubmit}:FormLayoutProps) {

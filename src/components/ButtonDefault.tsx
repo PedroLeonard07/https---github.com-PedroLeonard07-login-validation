@@ -1,10 +1,13 @@
-interface BtnDefault {
+interface BtnDefaultProps {
     value: string;
+    onclick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-export function ButtonDefault({value}: BtnDefault) {
+export function ButtonDefault({value, onclick}: BtnDefaultProps) {
     return (
-        <button className="rounded-[7px] bg-white py-[16px] text-black font-semibold transition-colors duration-300 ease-in-out cursor-pointer">
+        <button 
+        onClick={onclick}
+        className="rounded-[7px] w-full bg-white py-[16px] text-black font-semibold transition-colors duration-300 ease-in-out cursor-pointer">
             {value}
         </button>
     )

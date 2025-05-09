@@ -41,7 +41,7 @@ export function useLogin() {
             ) {
               localStorage.setItem('auth', 'true');
               const userName = users.find(u => u.email === email.trim())?.name
-              localStorage.setItem('userLogged', JSON.stringify(userName));
+              localStorage.setItem('userLogged', `${userName}`);
               navigate('/home');                
             } else {
               setEmailError("Email ou senha incorreto");
