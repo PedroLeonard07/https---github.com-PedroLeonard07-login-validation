@@ -17,7 +17,7 @@ export function InputDefault({label, placeholder, type, onChange, value, error}:
                 placeholder={placeholder}
                 onChange={onChange}
                 value={value}
-                className="py-[16px] pl-[15px] outline-0 pr-[246px] w-full bg-linear-to-br from-[#c9c9c962] to-[#C4C4C41A] rounded-[7px] text-[15px]" 
+                className="py-[16px] pl-[15px] outline-0 pr-[15px] w-full bg-linear-to-br from-[#c9c9c962] to-[#C4C4C41A] rounded-[7px] text-[15px]" 
             />
             {error && <span className="text-red-500">{error}</span>}
         </div>
