@@ -47,7 +47,7 @@ export function useRegister() {
         setEmailError("Email inválido");
         hasError = true;
       }
-      if (email.trim() === verifEmail) {
+      if (email.trim() === verifEmail && email.trim() !== "") {
         setEmailError("Email ja cadastrado");
         hasError = true;
       }
